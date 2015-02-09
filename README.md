@@ -35,3 +35,29 @@ git checkout v5-34-25
 ./configure --enable-roofit --enable-minuit2 --enable-builtin-freetype
 make jobs=4
 ```
+
+### CMSSW (latest)
+In order to enable the CMSSW commands first source
+```shell
+. /cvmfs/cms.cern.ch/cmsset_default.sh
+```
+and set SCRAM_ARCH
+```shell
+# this refers to the slc* folders in /cvmfs/cms.cern.ch
+export SCRAM_ARCH=slc6_amd64_gcc491
+```
+You can get a list of available version by doing
+```shell
+scram list CMSSW
+```
+Pick the one you want (latest CMSSW_7_4_0_pre6_ROOT6 and CMSSW_7_4_0_pre6 [ROOT 5.34.X]) and get it:
+```shell 
+cmsrel CMSSW_7_4_0_pre6_ROOT6
+cd CMSSW_7_4_0_pre6_ROOT6/src
+# enable CMS environment
+cmsenv
+# put your code here and use your usual build methods
+```
+An example of such a setup can be found here: https://github.com/BristolTopGroup/AnalysisSoftware/
+
+
