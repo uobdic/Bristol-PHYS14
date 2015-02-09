@@ -60,4 +60,10 @@ cmsenv
 ```
 An example of such a setup can be found here: https://github.com/BristolTopGroup/AnalysisSoftware/
 
+Additional CMSSW tools can be enabled using the ```scram setup <tool>``` command.
+For a full list of available tools:
+```shell
+scram tool list
+```
+
 
